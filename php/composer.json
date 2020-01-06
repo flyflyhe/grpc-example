@@ -1,0 +1,12 @@
+{
+    "require": {
+        "grpc/grpc": "^1.26",
+        "google/protobuf": "^3.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "User\\": "User/",
+            "GPBMetadata\\": "GPBMetadata/"
+        }
+    }
+}

@@ -3,23 +3,23 @@ package main
 import (
 	"context"
 	"google.golang.org/grpc"
-	"grpc-test-one/test"
+	"grpc-test-one/user"
 	"log"
 	"net"
 )
 
-type TestService struct {}
+type UserService struct {}
 
-func (s *TestService) Search(ctx context.Context, r *test.TestRequest) (*test.TestResponse, error) {
-	return &test.TestResponse{Name:r.Name}, nil
+func (s *UserService) Search(ctx context.Context, r *user.UserRequest) (*user.UserResponse, error) {
+	return &user.UserResponse{Name: r.Name}, nil
 }
 
 
-const PORT = "9001"
+const PORT = "9002"
 
 func main() {
 	server := grpc.NewServer()
-	test.RegisterTestServiceServer(server, &TestService{})
+	user.RegisterUserServiceServer(server, &UserService{})
 
 	lis, err := net.Listen("tcp", ":"+PORT)
 	if err != nil {
