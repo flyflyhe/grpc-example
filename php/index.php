@@ -8,4 +8,5 @@ $req = new \User\UserRequest();
 $req->setName("test");
 [$res, $status] = $user->Search($req)->wait();
 var_dump($res);
+var_dump($res->getName());
 var_dump($status);

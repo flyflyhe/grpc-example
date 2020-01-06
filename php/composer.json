@@ -1,7 +1,8 @@
 {
     "require": {
         "grpc/grpc": "^1.26",
-        "google/protobuf": "^3.11"
+        "google/protobuf": "^3.11",
+        "php": ">7.0"
     },
     "autoload": {
         "psr-4": {
